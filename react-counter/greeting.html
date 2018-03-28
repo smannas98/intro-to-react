@@ -4,6 +4,27 @@
   </head>
 
   <body>
-    <p>Hello World!</p>
+    <div id="app"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      class Hello extends React.Component {
+        render() {
+          return (
+            <div>
+              <body>
+                <h1>My First React Component</h1>
+                <p>This is my first React Component.</p>
+              </body>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(
+        <Hello />, document.getElementById('app')
+      );
+    </script>
   </body>
 </html>
