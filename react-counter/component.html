@@ -11,18 +11,31 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
      <script type="text/babel">
       class Hello extends React.Component {
+        constructor(props){
+          super(props);
+          this.state = {
+            number: 4
+          }
+        }
         render() {
           return(
             <div>
               <h1>This is my first react component.</h1>
-              <p>This is my very first react component from scratch. I cannot wait to learn more react.</p>
+              <h2>Current date: {this.props.date.toLocaleDateString()}</h2>
+              <h3>Current Week: {this.state.number}</h3>
+              <p>This is my very first react component.</p>
             </div>
           );
         }
       }
 
+      const info = {
+        date: new Date()
+      }
+
       ReactDOM.render(
-        <Hello />, document.getElementById('app')
+        <Hello
+          date={info.date}/>, document.getElementById('app')
       );
      </script>
   </body>
